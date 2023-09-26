@@ -1,0 +1,15 @@
+[package]
+name = "find-syntax"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+clap = { version = "4.4.5", features = ["derive"] }
+env_logger = "0.10.0"
+log = "0.4.20"
+path-clean = "1.0.1"
+regex = "1.9.5"
+reqwest = { version = "0.11.20", features = ["blocking", "json"] }
+serde = { version = "1.0.188", features = ["derive"] }
