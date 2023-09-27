@@ -6,6 +6,15 @@ An experiment to try and find the ideal syntax highlighter for an arbitrary snip
 - Determine the complexity and level of color in the generated HTML.
 - Report and display the results, showing the "best" syntax highlighter for the snippet.
 
+## Analysis
+
+- Colorization can be counting the number of non-whitespace characters inside an element with a classname starting with `pl-` as a percentage of all non-whitespace characters.
+  - Some class identifiers represent white colors, and should be manually blacklisted from being counted.
+  - The deepest/closest classname should be used to determine the color.
+  - CSS analysis may be required if multiple classnames are used to determine the color. This shouldn't happen though.
+- Complexity can be determined by analyzing the average coverage for each color within the colorized text.
+    - [Distribution calculation](https://gist.github.com/Xevion/1b5c971e88ac51521c133cc7e04ecdff)
+
 ## Goals
 
 - Memory caching of API results to prevent unnecessary requests.
